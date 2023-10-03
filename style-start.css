@@ -147,6 +147,9 @@ h3 {
   padding-block: 2rem;
   width: min(95%, 70rem);
   margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
 }
 
 .testimonial {
@@ -156,6 +159,14 @@ h3 {
   box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-secondary-400) / 0.25);
 }
 
+.grid-col-span-2 {
+  grid-column: span 2;
+}
+
+.testimonial:last-child {
+  grid-column-start: 4;
+  grid-row: 1 / span 2;
+}
 .testimonial.quote {
   background-image: url("./images/bg-pattern-quotation.svg");
   background-repeat: no-repeat;
