@@ -148,7 +148,9 @@ h3 {
   width: min(95%, 70rem);
   margin-inline: auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "one one two five"
+    "three four four five";
   gap: 10px;
 }
 
@@ -159,13 +161,20 @@ h3 {
   box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-secondary-400) / 0.25);
 }
 
-.grid-col-span-2 {
-  grid-column: span 2;
+.testimonial:nth-child(1) {
+  grid-area: one;
 }
-
-.testimonial:last-child {
-  grid-column-start: 4;
-  grid-row: 1 / span 2;
+.testimonial:nth-child(2) {
+  grid-area: two;
+}
+.testimonial:nth-child(3) {
+  grid-area: three;
+}
+.testimonial:nth-child(4) {
+  grid-area: four;
+}
+.testimonial:nth-child(5) {
+  grid-area: five;
 }
 .testimonial.quote {
   background-image: url("./images/bg-pattern-quotation.svg");
